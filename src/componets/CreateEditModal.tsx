@@ -1,19 +1,20 @@
 import { Box, Button, Modal, TextField, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { HighlightOff } from "@mui/icons-material";
+import { IBookStatus } from "../types";
 
 
 type EditBookModalProps = {
   open: boolean;
   handleClose: () => void;
-  handleSubmit: (status: number) => Promise<void>;
+  handleSubmit: (data: IBookStatus) => Promise<void>;
 };
 
 const CreateEditModal: React.FC<EditBookModalProps> = ({ open, handleClose, handleSubmit }) => {
   const { register, handleSubmit: handleFormSubmit, reset } = useForm();
 
-  const onSubmit = (status: number) => {
-    handleSubmit(status);
+  const onSubmit = (data: IBookStatus) => {
+    handleSubmit(data);
     handleClose();
     reset();
   };

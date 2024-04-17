@@ -4,11 +4,15 @@ export type INewUser = {
 }
 
 export type IBookTitle = {
-    title: string;
+    search: string;
 }
 
 export type IBookIsbn = {
     isbn?: string;
+}
+
+export type IBookStatus = {
+    status?: number;
 }
 
 export type IUser = {

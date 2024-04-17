@@ -1,6 +1,6 @@
 import axios from 'axios';
 import CryptoJS from 'crypto-js';
-import { BookResponse, IBookIsbn, IBookTitle, INewUser} from '../../types';
+import { IBookIsbn, IBookStatus, IBookTitle, INewUser} from '../../types';
 
 
 export async function createUserAccount(user: INewUser) {
@@ -54,7 +54,7 @@ export async function searchBooks(book: IBookTitle) {
         const key = localStorage.getItem('userKey'); 
         const secret = localStorage.getItem('userSecret');
         const method = 'GET';
-        const title = book.title;
+        const title = book.search;
         const signStr = `${method}/books/${title}${secret}`;
         const sign = CryptoJS.MD5(signStr).toString();
         const url = `https://no23.lavina.tech/books/${title}`;
@@ -120,7 +120,7 @@ export async function getAllBooks() {
     }
 }
 
-export async function deleteUserBook(bookId: BookResponse) {
+export async function deleteUserBook(bookId: number) {
     const key = localStorage.getItem('userKey'); 
     const secret = localStorage.getItem('userSecret');
     const method = 'DELETE';
@@ -143,7 +143,7 @@ export async function deleteUserBook(bookId: BookResponse) {
     }
 }
 
-export async function editUserBook(status: number, id: number) {
+export async function editUserBook(status: IBookStatus, id: number) {
     const key = localStorage.getItem('userKey'); 
     const secret = localStorage.getItem('userSecret');
     const method = 'PATCH';

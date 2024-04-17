@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import { useEffect, useState } from "react";
 import CreateBookModal from "../../componets/CreateBookModal";
-import { BookResponse, IBookIsbn } from "../../types";
+import { BookResponse, IBookIsbn, IBookStatus } from "../../types";
 import { createBook, deleteUserBook, editUserBook, getAllBooks } from "../../lib/api/api";
 import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
@@ -43,7 +43,7 @@ const HomePage = () => {
     setModalOpen(false);
   };
 
-  const handleEditBook = async (status: number) => {
+  const handleEditBook = async (status: IBookStatus) => {
     try {
       await editUserBook(status, bookId);
   } catch (error) {
@@ -95,9 +95,9 @@ const HomePage = () => {
 
   };
 
-  const handleDelete = async (book: BookResponse) => {
+  const handleDelete = async (id: number) => {
     try {
-        await deleteUserBook(book);
+        await deleteUserBook(id);
         const loadedBooks = await getAllBooks();
         setBooks(loadedBooks.data);
         setBtns(Array.from({ length: books.length }, () => false));

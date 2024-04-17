@@ -9,14 +9,14 @@ import { useForm } from 'react-hook-form';
 import { searchBooks } from '../lib/api/api';
 import { useState } from 'react';
 
-type FormValues = {
+type FormValue = {
   search: string,
 }
 
 
 const Topbar = () => {
   const [ inputState, setInputState ] = useState(false);
-  const { register, handleSubmit } = useForm<FormValues>({
+  const { register, handleSubmit } = useForm<FormValue>({
     defaultValues: {
       search: "",
     }
@@ -24,7 +24,7 @@ const Topbar = () => {
 
 
 
-  async function onSubmit(data: FormValues) {
+  async function onSubmit(data: FormValue) {
     const bookFound = await searchBooks(data);
 
     if(!bookFound){
