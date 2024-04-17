@@ -55,7 +55,7 @@ const SignUpPage = () => {
         password: "",
         confirmPassword: ""
       });
-      navigate("/");
+      navigate("/bookshelf");
     } else {
       console.error("Error sign up");
     }
@@ -130,7 +130,7 @@ const SignUpPage = () => {
             </Button>
           </div>
           <p className=" text-center font-semibold custom-font">Already signed up?
-            <Link to="/sign-in" className=" font-semibold custom-font custom-color ml-1 text-small-semibold">Log in</Link>
+            <Link to="/bookshelf/sign-in" className=" font-semibold custom-font custom-color ml-1 text-small-semibold">Log in</Link>
           </p>
         </div>
       </form>

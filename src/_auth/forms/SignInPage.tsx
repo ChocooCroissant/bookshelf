@@ -36,7 +36,7 @@ const SignInPage = () => {
           username: "",
           password: "",
         });
-        navigate("/");
+        navigate("/bookshelf");
       } else {
         console.error("Error logging in");
       }
@@ -99,7 +99,7 @@ const SignInPage = () => {
             </Button>
           </div>
           <p className=" text-center font-semibold custom-font">Don't have an account?
-            <Link to="/sign-up" className=" font-semibold custom-font custom-color ml-1 text-small-semibold">Sign up</Link>
+            <Link to="/bookshelf/sign-up" className=" font-semibold custom-font custom-color ml-1 text-small-semibold">Sign up</Link>
           </p>
         </div>
       </form>

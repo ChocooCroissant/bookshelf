@@ -118,11 +118,11 @@ const HomePage = () => {
 
     if (localStorage.getItem("userKey") === '' || localStorage.getItem("userKey") === null) {
       setTimeout(() => {
-        navigate('/sign-up');
+        navigate('/bookshelf/sign-up');
       }, 0);
     } else {
       setTimeout(() => {
-        navigate('/');
+        navigate('/bookshelf');
         fetchData();
       }, 0);
     }

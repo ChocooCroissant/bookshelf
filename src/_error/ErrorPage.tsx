@@ -6,7 +6,7 @@ const ErrorPage = () => {
     const navigate = useNavigate()
 
     const handleHomeNavigate = () => {
-        navigate('/');
+        navigate('/bookshelf');
     }
 
     const handleReloadNavigate = () => {
@@ -17,7 +17,7 @@ const ErrorPage = () => {
     <div className="h-full gap-14 flex flex-col justify-center items-center">
         <div>
             <img 
-                src="/public/undrawPage.png" 
+                src="/bookshelf/public/undrawPage.png" 
                 alt="" 
             />
         </div>

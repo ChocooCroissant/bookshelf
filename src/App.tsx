@@ -13,15 +13,15 @@ function App() {
   return (
     <main className="h-screen app-container">
       <Routes>
-        <Route element={<AuthLayout/>}>
-          <Route path="/sign-up" element={<SignUpPage/>}/>
-          <Route path="/sign-in" element={<SignInPage/>}/>
+        <Route path="/bookshelf" element={<AuthLayout/>}>
+          <Route path="/bookshelf/sign-up" element={<SignUpPage/>}/>
+          <Route path="/bookshelf/sign-in" element={<SignInPage/>}/>
         </Route>
 
-        <Route element={<RootLayout/>}>
+        <Route path="/bookshelf"  element={<RootLayout/>}>
           <Route index element={<HomePage/>}/>
         </Route>
-        <Route path="/error" element={<ErrorPage />} />
+        <Route path="/bookshelf/error" element={<ErrorPage />} />
       </Routes>
     </main>
   )

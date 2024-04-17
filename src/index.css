@@ -8,7 +8,7 @@
 
 .app-container {
   /* Устанавливаем SVG как фон */
-  background-image: url('Rectangle.png');
+  background-image: url('/bookshelf/Rectangle.png');
   background-repeat: no-repeat;
 
   

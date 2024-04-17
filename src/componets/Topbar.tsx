@@ -90,9 +90,9 @@ const Topbar = () => {
         <div className='gap-6 flex justify-center items-center '>
           <NotificationsNoneIcon fontSize='large'/>
           <CircleIcon className='custom-frame' fontSize='inherit' color='error'/>
-          <Link to="/">
+          <Link to="/bookshelf">
             <img 
-              src="/public/user.png" 
+              src="/bookshelf/public/user.png" 
               alt="user"
               className='custom-border h-10 w-10 object-cover rounded-full'
             />
